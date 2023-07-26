@@ -9,19 +9,23 @@
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
-    <bean id="RockBean" class="org.example.myproject.RockMusic"/>
-    <bean id="classicBean" class="org.example.myproject.ClassicalMusic"/>
+<!--    <bean id="RockBean" class="org.example.myproject.RockMusic"/>-->
+    <bean id="classicBean" class="org.example.myproject.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+    factory-method="getClassicalMusic"/>
 
-    <bean id="musicPlayer"
-          class="org.example.myproject.MusicPlayer">
-        <constructor-arg>
-            <list>
-                <ref bean="RockBean"/>
-                <ref bean="classicBean"/>
-            </list>
-        </constructor-arg>
+<!--    <bean id="musicPlayer"-->
+<!--          class="org.example.myproject.MusicPlayer"-->
+<!--    scope="prototype">-->
+<!--        <constructor-arg>-->
+<!--            <list>-->
+<!--                <ref bean="RockBean"/>-->
+<!--                <ref bean="classicBean"/>-->
+<!--            </list>-->
+<!--        </constructor-arg>-->
 
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
 </beans>

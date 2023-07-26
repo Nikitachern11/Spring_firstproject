@@ -36,5 +36,4 @@ public class MusicPlayer {
         this.name = name;
     }
 
-
 }
