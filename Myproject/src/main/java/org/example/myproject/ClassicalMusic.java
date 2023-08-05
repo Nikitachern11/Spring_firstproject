@@ -1,5 +1,8 @@
 package org.example.myproject;
 
+import org.springframework.stereotype.Component;
+
+
 public class ClassicalMusic implements Music {
     public void doMyInit() {
         System.out.println("Doing my initialization.");
@@ -8,7 +11,7 @@ public class ClassicalMusic implements Music {
         System.out.println("Doing my destruction.");
     }
 
-    private ClassicalMusic() {
+    public ClassicalMusic() {
 
     }
 
